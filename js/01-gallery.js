@@ -36,10 +36,10 @@ function onClickImgContent(evt) {
     {
       closable: true,
       onShow: (instance) => {
-        window.addEventListener("keydown", onModalPressEsc);
+        window.addEventListener("keydown", onModalEsc);
       },
       onClose: (instance) => {
-        window.removeEventListener("keydown", onModalPressEsc);
+        window.removeEventListener("keydown", onModalEsc);
       },
     }
   );
