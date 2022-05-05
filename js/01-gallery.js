@@ -34,9 +34,13 @@ function onClickImgContent(evt) {
   const instance = basicLightbox.create(
     ` <img src="${modalImg}" width="800" height="600">`,
     {
+      closable: true,
       onShow: (instance) => {
-        window.addEventListener("keydown", onModalEsc);
-      }
+        window.addEventListener("keydown", onModalPressEsc);
+      },
+      onClose: (instance) => {
+        window.removeEventListener("keydown", onModalPressEsc);
+      },
     }
   );
   instance.show();
@@ -46,4 +50,3 @@ function onClickImgContent(evt) {
     }
   }
 }
-
